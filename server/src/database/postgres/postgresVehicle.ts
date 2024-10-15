@@ -1,8 +1,8 @@
-import { IVehicleRepository } from '../repository/IVehicleRepository';
-import { IVehicle } from '../models/IVehicle';
+import { IVehicleRepository } from '../../repository/IVehicleRepository';
+import { IVehicle } from '../../models/IVehicle';
 
 
-export class MongoRepository implements IVehicleRepository {
+export class PostgresRepository implements IVehicleRepository {
     private vehicles: IVehicle[] = [];
 
     async create(vehicle: IVehicle): Promise<IVehicle> {
