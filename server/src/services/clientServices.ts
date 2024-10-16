@@ -27,9 +27,9 @@ export class ClientServices implements ClientServiceInterface {
             return await this.clientRepository.getById(id);
         } catch (error: unknown) {
             if (error instanceof Error) {
-                throw new Error(`Error creating client: ${error.message}`);
+                throw new Error(`Error getting client: ${error.message}`);
             } else {
-                throw new Error('Error creating client: Unknown error');
+                throw new Error('Error getting client: Unknown error');
             };
         };
     };
@@ -39,9 +39,9 @@ export class ClientServices implements ClientServiceInterface {
             return await this.clientRepository.update(id, client);
         } catch (error: unknown) {
             if (error instanceof Error) {
-                throw new Error(`Error creating client: ${error.message}`);
+                throw new Error(`Error getting client: ${error.message}`);
             } else {
-                throw new Error('Error creating client: Unknown error');
+                throw new Error('Error getting client: Unknown error');
             };
         };
     };
@@ -51,9 +51,9 @@ export class ClientServices implements ClientServiceInterface {
             return await this.clientRepository.delete(id);
         } catch (error: unknown) {
             if (error instanceof Error) {
-                throw new Error(`Error creating client: ${error.message}`);
+                throw new Error(`Error getting client: ${error.message}`);
             } else {
-                throw new Error('Error creating client: Unknown error');
+                throw new Error('Error getting client: Unknown error');
             };
         };
     };
