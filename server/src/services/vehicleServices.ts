@@ -12,21 +12,51 @@ export class VehicleServices implements VehicleServiceInterface {
     };
 
     public async createVehicle(vehicle: IVehicle) {
-        return await this.vehicleRepository.create(vehicle);
+        try {
+            return await this.vehicleRepository.create(vehicle);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error creating vehicle: ${error.message}`);
+            } else {
+                throw new Error('Error creating vehicle: Unknown error');
+            };
+        };
     };
 
     public async getVehicleById(id: number) {
-        return await this.vehicleRepository.getById(id);
+        try {
+            return await this.vehicleRepository.getById(id);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error getting vehicle: ${error.message}`);
+            } else {
+                throw new Error('Error getting vehicle: Unknown error');
+            };
+        };
     };
 
     public async updateVehicle(id: number, vehicle: IVehicle) {
-        return await this.vehicleRepository.update(id, vehicle);
+        try {
+            return await this.vehicleRepository.update(id, vehicle);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error getting vehicle: ${error.message}`);
+            } else {
+                throw new Error('Error getting vehicle: Unknown error');
+            };
+        };
     };
 
     public async deleteVehicle(id: number) {
-        return await this.vehicleRepository.delete(id);
+        try {
+         return await this.vehicleRepository.delete(id);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error getting vehicle: ${error.message}`);
+            } else {
+                throw new Error('Error getting vehicle: Unknown error');
+            };
+        };
     };
 
 };
-
-

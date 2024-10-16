@@ -11,19 +11,51 @@ export class ClientServices implements ClientServiceInterface {
     };
 
     public async createClient(client: IClient) {
-        return await this.clientRepository.create(client);
+        try {
+            return await this.clientRepository.create(client);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error creating client: ${error.message}`);
+            } else {
+                throw new Error('Error creating client: Unknown error');
+            };
+        };
     };
 
     public async getClientById(id: number) {
-        return await this.clientRepository.getById(id);
+        try {
+            return await this.clientRepository.getById(id);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error creating client: ${error.message}`);
+            } else {
+                throw new Error('Error creating client: Unknown error');
+            };
+        };
     };
 
     public async updateClient(id: number, client: IClient) {
-        return await this.clientRepository.update(id, client);
+        try {
+            return await this.clientRepository.update(id, client);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error creating client: ${error.message}`);
+            } else {
+                throw new Error('Error creating client: Unknown error');
+            };
+        };
     };
 
     public async deleteClient(id: number) {
-        return await this.clientRepository.delete(id);
+        try {
+            return await this.clientRepository.delete(id);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                throw new Error(`Error creating client: ${error.message}`);
+            } else {
+                throw new Error('Error creating client: Unknown error');
+            };
+        };
     };
 
 };
